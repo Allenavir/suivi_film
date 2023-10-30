@@ -10,7 +10,7 @@ export const filmList = [
         category: 'Science Fiction',
         director: 'Denis Villeneuve',
         actors: 'Timothée Chalamet, Zendaya, Rebecca Ferguson',
-        release_date: new Date('13/03/2024'),
+        release_date: new Date('2024-03-18'),
         poster: dune2,
     },
     {
@@ -18,7 +18,7 @@ export const filmList = [
         category: 'Animation',
         director: 'Hayao Miyazaki',
         actors: 'Masaki Suda, Takuya Kimura, Kô Shibasaki',
-        release_date: new Date('01/11/2023'),
+        release_date: new Date('2023-11-01'),
         poster: heron,
     },
     {
@@ -26,7 +26,7 @@ export const filmList = [
         category: 'Epouvante-horreur',
         director: 'Emma Tammi',
         actors: 'Josh Hutcherson, Elizabeth Lail, Matthew Lillard',
-        release_date: new Date('08/11/2023'),
+        release_date: new Date('2023-11-08'),
         poster: freddy,
     },
     {
@@ -34,7 +34,7 @@ export const filmList = [
         category: 'Animation',
         director: 'Jérémie Périn',
         actors: 'Léa Drucker, Mathieu Amalric, Daniel Njo Lobé',
-        release_date: new Date('22/11/2023'),
+        release_date: new Date('2023-11-22'),
         poster: marsExpress,
     },
     {
@@ -42,7 +42,7 @@ export const filmList = [
         category: 'Fantastique',
         director: 'Paul King',
         actors: 'Timothée Chalamet, Keegan-Michael Key, Sally Hawkins',
-        release_date: new Date('13/12/2023'),
+        release_date: new Date('2023-12-13'),
         poster: wonka,
     }
 ]

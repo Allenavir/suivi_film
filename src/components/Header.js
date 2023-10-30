@@ -14,7 +14,7 @@ function Header() {
     return (
         <header>
             <div id='currentDate'> {formattedDateWithCapital}</div>
-            <div id='mainTitle'>Purrfect Movie List</div>            
+            <div id='mainTitle'>Purrfect WishList</div>            
             <div >Loggin</div>
         </header>
     )
