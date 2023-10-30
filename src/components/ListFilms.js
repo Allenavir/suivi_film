@@ -10,19 +10,19 @@ function ListFilms({ wishlist, setWishlist }) {
         day: 'numeric',
     };
 
-    function addToWishlist(film) {
+    function addToWishlist(filmToAdd) {
         //Check if it's not in the list
-        const isAlreadyInWishlist = wishlist.find(wishedFilm => wishedFilm.name === film.name);
+        const isAlreadyInWishlist = wishlist.find(wishedFilm => wishedFilm.name === filmToAdd.name);
 
         // Add the selected card to the wishlist
         if (!isAlreadyInWishlist) {
-            setWishlist([...wishlist, film])
+            setWishlist([...wishlist, filmToAdd])
         }
     };
 
-    const removeFromWishlist = (film) => {
-        // Filter out the film to remove from the wishlist
-        const updatedWishlist = wishlist.filter((film) => film !== film);
+    const removeFromWishlist = (filmToRemove) => {
+        // Filter out the film to remove from the wishlist based on its name
+        const updatedWishlist = wishlist.filter((film) => film.name !== filmToRemove.name);
         setWishlist(updatedWishlist);
       };
 
@@ -32,10 +32,10 @@ function ListFilms({ wishlist, setWishlist }) {
                 <div key={index} class='filmCard'>
                     <h2>{film.name}</h2>
                     <img className='poster' src={film.poster} alt={film.name} />
-                    <p>Category: {film.category}</p>
-                    <p>Director: {film.director}</p>
-                    <p>Actors: {film.actors}</p>
-                    <p>Release Date: {film.release_date.toLocaleDateString('fr-FR', frenchDateOptions)}</p>
+                    <p>Genre: {film.category}</p>
+                    <p>Réalisateur: {film.director}</p>
+                    <p>Acteurs: {film.actors}</p>
+                    <p>Date de sortie en France: {film.release_date.toLocaleDateString('fr-FR', frenchDateOptions)}</p>
 
                     {   // Only display the button is the film is not already in the WishList
                         // Can use find like above or some function
