@@ -1,8 +1,9 @@
 import '../styles/Header.css';
+import logo from '../assets/logo.png';
 
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
-  }
+}
 
 function Header() {
     // Create a Date object for the current date and time
@@ -13,12 +14,16 @@ function Header() {
 
     return (
         <header>
-            <div id='currentDate'> {formattedDateWithCapital}</div>
-            <div id='mainTitle'>Purrfect WishList</div>            
-            <div >Loggin</div>
+            <div id="logo">
+            <img className='logo' src={logo} alt="logo"/>
+            </div>
+            <div id='mainTitle'>Purrfect WishList</div>
+            <div id="rightMenu">
+                <div id='currentDate'> {formattedDateWithCapital}</div>
+                <div className='logButton'>Loggin</div>
+            </div>
         </header>
     )
-
 }
 
 export default Header

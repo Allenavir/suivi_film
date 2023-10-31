@@ -1,5 +1,7 @@
 #wishList {
     border: 1px solid black;
-    margin: 10px;
+    margin-left: 10px;
+    margin-bottom:20px;
     width: 33.33%;
+    background: white;
 }

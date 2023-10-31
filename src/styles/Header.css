@@ -1,11 +1,31 @@
 header {
     display: flex;
-    justify-content: space-between;
-    border: 1px solid black;;
+    justify-content: space-between;   
+    background: linear-gradient(90deg,#e7e7e700 0,#e7e7e779 0),url(../assets/bg-menu.webp);   
+    background-position: 100% 0;   
+    background-size: cover;
+    padding: 2px 12px;
+    height: 90px;
 }
 
 #mainTitle {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: large;
+    font-size: 30px;
+    margin-top:30px;
     text-align: center;
+    vertical-align: middle;
+}
+
+.logo {
+    margin-top:10px;
+    height:80%;
+}
+
+#currentDate {
+    margin-top:10px;
+}
+
+.logButton {
+    margin-top:10px; 
+    float: right;
 }

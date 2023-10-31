@@ -1,13 +1,15 @@
 #movieList {
     display: flex;
     flex-wrap: wrap;
+    background: linear-gradient(90deg, #F1F1F1 0, #E9E9E9 100%);
 }
 
 .filmCard {
     border: 1px solid black;
     padding: 10px;
-    margin: 10px;
+    margin: 0px 10px 20px 10px;
     flex: 0 0 calc(33.33% - 43px);
+    background: #fff;
 }
 
 .poster {
