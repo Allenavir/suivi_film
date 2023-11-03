@@ -1,4 +1,4 @@
-import dune2 from '../assets/dune2.jpg'
+import dune2 from '../assets/dune2.webp'
 import heron from '../assets/garconheron.jpg'
 import freddy from '../assets/freddys.jpg'
 import marsExpress from '../assets/marsExpress.jpg'

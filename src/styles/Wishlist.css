@@ -1,7 +1,20 @@
 #wishList {
     border: 1px solid black;
+    border-radius: 6px;
     margin-left: 10px;
     margin-bottom:20px;
-    width: 33.33%;
+    width: 33.3%;
     background: white;
+}
+
+h1 {
+    margin: 10px;
+}
+
+#addedFilms {
+    margin-left:10px;
+}
+
+.wishListItem {
+    margin-bottom:50px;
 }

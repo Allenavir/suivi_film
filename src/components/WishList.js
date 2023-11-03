@@ -1,7 +1,6 @@
 import '../styles/Wishlist.css';
 
-
-function Wishlist({ wishlist }) {
+function Wishlist({ wishlist }) {    
 
     const frenchDateOptions = {
         year: 'numeric',
@@ -51,8 +50,8 @@ function Wishlist({ wishlist }) {
                     }
 
                     return (
-                        <div key={index}>
-                            <h3>{film.name}</h3>
+                        <div class='wishListItem' key={index}>
+                            <h3>{film.title}</h3>
                             <p>Date de sortie en France: {formattedReleaseDate}</p>
                             <p>{message}</p>
                         </div>
