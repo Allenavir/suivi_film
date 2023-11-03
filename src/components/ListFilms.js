@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { filmList } from '../datas/listFilm'
 import '../styles/ListFilms.css';
 
 
 function ListFilms({ wishlist, setWishlist }) {
     //const [currentPage, setCurrentPage] = useState(1);
     const [movieDetails, setMovieDetails] = useState([]);
-    const apiKey = '*****';
+    const apiKey = '58e3fa24af48976ae1f49bb7bafc986c';
 
 
     useEffect(() => {
         // API call data    
-        const language = 'fr-FR';
-        const releaseType = 4;
+        const language = 'fr-FR';        
         const resultsPerPage = 9;
         const page = 1;
 
@@ -21,10 +19,12 @@ function ListFilms({ wishlist, setWishlist }) {
         sixMonthsAgo.setMonth(currentDate.getMonth() - 1);
         const sixMonthsLater = new Date(currentDate);
         sixMonthsLater.setMonth(currentDate.getMonth() + 1);
+        const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
 
         // Function to fetch a page of results
-        const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=release_date.desc&language=${language}&primary_release_date.gte=${sixMonthsAgo.toISOString().split('T')[0]}&primary_release_date.lte=${sixMonthsLater.toISOString().split('T')[0]}&with_release_type=${releaseType}`;
-        
+        const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&primary_release_date.gte=${firstDayOfMonth.toISOString().split('T')[0]}&primary_release_date.lte=${lastDayOfMonth.toISOString().split('T')[0]}&region=FR&with_release_type=3&sort_by=release_date.asc`;
+
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
@@ -121,34 +121,7 @@ function ListFilms({ wishlist, setWishlist }) {
                         <button onClick={() => addToWishlist(movie)}>Ajouter à la liste</button>
                     )}
                 </div>
-            ))}      
-                
-           
-
-            {filmList.map((film, index) => (
-                <div key={index} class='filmCard'>
-                    <h2>{film.name}</h2>
-                    <img className='poster' src={film.poster} alt={film.name} />
-                    <p>Genre: {film.category}</p>
-                    <p>Réalisateur: {film.director}</p>
-                    <p>Acteurs: {film.actors}</p>
-                    <p>Date de sortie en France: {film.release_date.toLocaleDateString('fr-FR', frenchDateOptions)}</p>
-
-                    {   // Only display the button is the film is not already in the WishList
-                        // Can use find like above or some function
-                        wishlist.some(wishedFilm => wishedFilm.name === film.name) ? (
-                            <div>
-                                <p>Ce film est deja dans la liste</p>
-                                <button onClick={() => removeFromWishlist(film)}>Retirer le film de la liste</button>
-                            </div>
-                        ) : (
-                            <button onClick={() => addToWishlist(film)}>Ajouter à la liste</button>
-                        )
-                    }
-
-                </div>
-            ))}
-
+            ))}               
         </div>
     )
 }
